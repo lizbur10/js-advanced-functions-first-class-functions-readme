@@ -502,10 +502,14 @@ What can we do with that returned function object? We can invoke it... immediate
 
 We can pass arguments into the invocation operator just like any old function:
 ```js
-(function (name, year, claimToFame) { console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`) })('Ada Lovelace', 1815, 'was the first computer programmer');
+(function (name, year, claimToFame) {
+  console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`);
+})('Ada Lovelace', 1815, 'was the first computer programmer');
 // LOG: Hi, I'm Ada Lovelace, and I was the first computer programmer!
 
-(function (name, year, claimToFame) { console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`) })('Grace Hopper', 1906, 'invented one of the first compilers');
+(function (name, year, claimToFame) {
+  console.log(`Hi, I'm ${name}, I was born in ${year}, and I ${claimToFame}!`);
+})('Grace Hopper', 1906, 'invented one of the first compilers');
 // LOG: Hi, I'm Grace Hopper, and I invented one of the first compilers!
 ```
 
