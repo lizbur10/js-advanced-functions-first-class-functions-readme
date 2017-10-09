@@ -61,7 +61,7 @@ function myFunc () {}
 However, the `function` keyword is adaptable. When it's the first thing in a line of code, it forms a _function declaration_ that creates a new function in memory but does not immediately produce a value. When it's placed anywhere except at the start of a line, it forms a _function expression_ that creates a new function **and** immediately returns that function as a value:
 ```js
 (function () {})
-// => ƒ myFunc() {}
+// => ƒ () {}
 ```
 
 String literals result in new strings, array literals result in new arrays, object literals result in new objects, and function expressions result in new functions:
