@@ -121,6 +121,28 @@ myFunc();
 // => 15
 ```
 
+Now if we wrote, 
+```js
+myFunc
+```
+should we expect to see `15` ??
+No, we'll see the *definiton of the function itself*.
+Our variables stores a reference to the function itself. We can call it whenever we want to.
+
+Since typing `myFunc` returns a function, we can invoke that function like we invoke any other function with `()`
+
+we can see 15 by typing:
+```js
+myFunc()
+// => 15
+
+myFunc() + 1
+// => 16
+
+myFunc + 1
+// => "function (){...}1"
+```
+
 #### Function expressions and hoisting
 One thing to note when you're debating whether to use a function declaration or a function expression stored in a variable: **function expressions are not hoisted**. Remember, hoisting is the somewhat ill-fitting name for the process whereby the JavaScript engine stores function (and variable) declarations in memory during the compilation phase. Since they're already stored in memory by the time the execution phase starts, we can refer those 'hoisted' functions before their lexical declaration — that is, above where they're written in the code:
 ```js
