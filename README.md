@@ -121,17 +121,17 @@ myFunc();
 // => 15
 ```
 
-Now if we wrote, 
+Now if we wrote:
 ```js
 myFunc
 ```
-should we expect to see `15` ??
+Should we expect to see `15` ??
 No, we'll see the *definiton of the function itself*.
 Our variables stores a reference to the function itself. We can call it whenever we want to.
 
 Since typing `myFunc` returns a function, we can invoke that function like we invoke any other function with `()`
 
-we can see 15 by typing:
+We can see `15` by typing:
 ```js
 myFunc()
 // => 15
