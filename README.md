@@ -682,3 +682,4 @@ This lesson introduces a ton of new things to think about when dealing with func
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-advanced-functions-first-class-functions-readme'>First-Class Functions</a> on Learn.co and start learning to code for free.</p>
+
