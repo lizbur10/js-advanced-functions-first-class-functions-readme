@@ -90,14 +90,7 @@ String literals result in new strings, array literals result in new arrays, obje
 // => ƒ () {}
 ```
 
-**_NOTE_**: The parentheses surrounding the above anonymous function are so that the `function` keyword isn't the first thing in the line of code. Parentheses used in this way are the _grouping operator_ (as in `2 * (3 + 4)`), and they don't affect the value produced by the expression:
-
-```js
-'Hello, ' + 'world!';
-// => "Hello, world!"
-```
-
-Parentheses around a function expression are **only required if the function keyword would otherwise be the first thing in a line of code**.
+**_NOTE_**: The parentheses surrounding the above anonymous function are so that the `function` keyword isn't the first thing in the line of code. Parentheses used in this way are the _grouping operator_ and they don't affect the value produced by the expression. Parentheses around a function expression are **only required if the function keyword would otherwise be the first thing in a line of code**.
 
 Okay, great, so we can create functions with function expressions. So what?
 
@@ -145,11 +138,9 @@ myFunc;
 
 Should we expect to see `15` ??
 No, we'll see the _definiton of the function itself_.
-Our variables stores a reference to the function itself. We can call it whenever we want to.
+Our variable stores a reference to the function itself. We can call it whenever we want to.
 
 Since typing `myFunc` returns a function, we can invoke that function like we invoke any other function with `()`
-
-We can see `15` by typing:
 
 ```js
 myFunc();
@@ -164,7 +155,7 @@ myFunc + 1;
 
 #### Function expressions and hoisting
 
-One thing to note when you're debating whether to use a function declaration or a function expression stored in a variable: **function expressions are not hoisted**. Remember, hoisting is the somewhat ill-fitting name for the process whereby the JavaScript engine stores function (and variable) declarations in memory during the compilation phase. Since they're already stored in memory by the time the execution phase starts, we can refer those 'hoisted' functions before their lexical declaration — that is, above where they're written in the code:
+One thing to note when you're debating whether to use a function declaration or a function expression stored in a variable: **function expressions are not hoisted**. Remember, hoisting is the somewhat ill-fitting name for the process whereby the JavaScript engine stores function (and variable) declarations in memory during the compilation phase. Since they're already stored in memory by the time the execution phase starts, we can refer to those 'hoisted' functions before their lexical declaration — that is, above where they're written in the code:
 
 ```js
 sayHi();
@@ -174,7 +165,18 @@ function sayHi() {
 }
 ```
 
-The above code works perfectly fine. Try it out in your browser's console. Contrastingly, function expressions are not hoisted. The JavaScript engine ignores them during the compilation phase, instead evaluating them during the execution phase. The following code will result in an error because variables declared with `const` aren't hoisted:
+The above code works perfectly fine. Try it out in your browser's console. Contrastingly, function expressions are not hoisted. The JavaScript engine ignores them during the compilation phase, instead evaluating them during the execution phase. 
+
+```js
+sayHello();
+
+(function() {
+	console.log('Hello');
+});
+// ERROR: Uncaught ReferenceError: sayHello is not defined
+```
+
+The following code will also result in an error because variables declared with `const` aren't hoisted:
 
 ```js
 sayHello();
@@ -182,7 +184,7 @@ sayHello();
 const sayHello = function() {
 	console.log('Hello');
 };
-// ERROR: Uncaught ReferenceError: sayHello is not defined
+// ERROR: Uncaught ReferenceError: Cannot access 'sayHello' before initialization
 ```
 
 Even if we use the dreaded `var`, the variable declaration will be hoisted but the assignment — where the function is instantiated and assigned to the variable — doesn't happen until the execution phase. Therefore we see a different error, this one telling us that `sayHello` is not a function:
@@ -604,7 +606,7 @@ We can pass arguments into the invocation operator just like any old function:
 // LOG: Hi, I'm Grace Hopper, I was born in 1906, and I invented one of the first compilers!
 ```
 
-We won't be using IIFEs much until we introduce _closures_, but it's an ubiquitous construct that you're sure to come across when searching StackOverflow and other resources.
+We won't be using IIFEs much until we introduce _closures_, but it's a ubiquitous construct that you're sure to come across when searching StackOverflow and other resources.
 
 ## Anonymous function expressions
 
