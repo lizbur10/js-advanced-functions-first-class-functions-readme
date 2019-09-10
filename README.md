@@ -90,14 +90,7 @@ String literals result in new strings, array literals result in new arrays, obje
 // => ƒ () {}
 ```
 
-**_NOTE_**: The parentheses surrounding the above anonymous function are so that the `function` keyword isn't the first thing in the line of code. Parentheses used in this way are the _grouping operator_ (as in `2 * (3 + 4)`), and they don't affect the value produced by the expression:
-
-```js
-'Hello, ' + 'world!';
-// => "Hello, world!"
-```
-
-Parentheses around a function expression are **only required if the function keyword would otherwise be the first thing in a line of code**.
+**_NOTE_**: The parentheses surrounding the above anonymous function are so that the `function` keyword isn't the first thing in the line of code. Parentheses used in this way are the _grouping operator_, and they don't affect the value produced by the expression. Parentheses around a function expression are **only required if the function keyword would otherwise be the first thing in a line of code**.
 
 Okay, great, so we can create functions with function expressions. So what?
 
@@ -164,7 +157,7 @@ myFunc + 1;
 
 #### Function expressions and hoisting
 
-One thing to note when you're debating whether to use a function declaration or a function expression stored in a variable: **function expressions are not hoisted**. Remember, hoisting is the somewhat ill-fitting name for the process whereby the JavaScript engine stores function (and variable) declarations in memory during the compilation phase. Since they're already stored in memory by the time the execution phase starts, we can refer those 'hoisted' functions before their lexical declaration — that is, above where they're written in the code:
+One thing to note when you're debating whether to use a function declaration or a function expression stored in a variable: **function expressions are not hoisted**. Remember, hoisting is the somewhat ill-fitting name for the process whereby the JavaScript engine stores function (and variable) declarations in memory during the compilation phase. Since they're already stored in memory by the time the execution phase starts, we can refer to those 'hoisted' functions before their lexical declaration — that is, above where they're written in the code:
 
 ```js
 sayHi();
@@ -604,7 +597,7 @@ We can pass arguments into the invocation operator just like any old function:
 // LOG: Hi, I'm Grace Hopper, I was born in 1906, and I invented one of the first compilers!
 ```
 
-We won't be using IIFEs much until we introduce _closures_, but it's an ubiquitous construct that you're sure to come across when searching StackOverflow and other resources.
+We won't be using IIFEs much until we introduce _closures_, but it's a ubiquitous construct that you're sure to come across when searching StackOverflow and other resources.
 
 ## Anonymous function expressions
 
